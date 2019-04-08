@@ -1,0 +1,5 @@
+apscheduler
+arrow
+beautifulsoup4
+selenium
+tabulate

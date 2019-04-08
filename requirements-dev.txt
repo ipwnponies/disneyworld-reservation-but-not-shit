@@ -1,0 +1,8 @@
+flake8
+ipython
+pre-commit
+pudb
+pylint
+pytest
+pytest-sugar
+pytest-watch
