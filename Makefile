@@ -19,7 +19,7 @@ venv-deploy:
 
 .PHONY: test
 test: venv
-	true
+	venv/bin/pytest main_test.py
 
 .PHONY: clean
 clean: ## Clean working directory

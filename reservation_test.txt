@@ -1,0 +1,268 @@
+<div id="WDPRO_MBox_WDW_Be_Our_Guest_Below_Content_mbox" style="visibility: visible; display: block;"></div>
+
+<div class="finderDetailsContentRight t9-t12 m5-m6">
+  <span class="finderDetailsCTA diningReservation" data-id="16660079;entityType=restaurant" data-url="/finder/dining-availability/">
+    <div id="diningReservationTitleContainer">
+      <span id="checkAvailability" class="title">Check Availability</span>
+    </div>
+    <div id="diningReservationFormContainer">
+      <div class="checkAvailabilityContainer">
+        <div class="searchAvailabilityControls">
+          <form action="/finder/restaurants" id="filterForm" class="diningAvailabilityForm availabilityForm" data-plugins="[&quot;pepLogin&quot;,&quot;pepFinderDetailMyDiningPlan&quot;]"
+            method="post">
+            <input type="hidden" name="pep_csrf" value="DEADBEEF">
+            <span class="searchDateContainer  standardFormElement">
+              <div class="formInputElement      floatLabelLeft" id="diningAvailabilityForm-searchDateid-base">
+                <label for="diningAvailabilityForm-searchDate" class="required">
+                  <span class="labelValue">Date</span>
+                  <span class="accessibleAltText">&nbsp;required </span>
+                </label>
+
+                <div class="textInput standardFormElement datePicker  hoverable">
+
+                  <input type="text" name="searchDate" id="diningAvailabilityForm-searchDate" value="04/04/2019">
+                  <button type="button" class="ui-datepicker-trigger icon-interactive-s calendarMonth-default calendarMonth-finderDetailsDining"
+                    aria-describedby="date" tabindex="-1" aria-hidden="true">
+                    <span id="calendarText" class="accessibleText">Selected date, Friday, April 5, 2019. Calendar Control. Expand by pressing enter key or collapse by pressing
+                      escape. Use arrows key to select day and page up or down keys to change between months.</span>
+                  </button>
+                </div>
+              </div>
+            </span>
+            <input type="hidden" name="skipPricing" value="true" id="skipPricing">
+            <div class="formInputElement    medium  floatLabelLeft" data-plugins="[&quot;pepClientSideValidatorToggle&quot;]" id="diningAvailabilityForm-searchTimeid-base"
+              style="display: table-cell;">
+              <label for="diningAvailabilityForm-searchTime" class="required" id="diningAvailabilityForm-searchTime-label">
+                <span class="labelValue">Time</span>
+                <span class="accessibleAltText">&nbsp;required - Opens menu</span>
+              </label>
+
+              <span class="selectBox medium standardFormElement popup status-closed" id="searchTime-wrapper">
+                <span class="selectBox-nojs selectBoxAccessible" style="display: none;">
+                  <select name="searchTime" id="diningAvailabilityForm-searchTime" class="searchTime inputElement">
+                    <option value="80000712">Breakfast</option>
+                    <option value="80000717">Lunch</option>
+                    <option value="80000714">Dinner</option>
+                    <option value="08:00">8:00 AM</option>
+                    <option value="08:30">8:30 AM</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="09:30">9:30 AM</option>
+                  </select>
+                </span>
+                <span class="richSelectArrowIcon uiGlobalSprite" style="z-index: 5;"></span>
+                <div class="select-toggle hoverable" aria-pressed="false" aria-expanded="false" aria-owns="diningAvailabilityForm-searchTime-dropdown-list"
+                  role="button" tabindex="0" style="">
+                  <span class="select-value" data-activeoptionclass="">
+                    <span class="rawOption">
+                      <span class="accessibleText hidden">Time&nbsp;required - Opens menu - </span>Breakfast
+                      <span class="selectedValue accessibleText">
+                        currently selected.</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="listWrapper" style="top: -240px; height: 232px;" aria-hidden="true">
+                  <div class="innerListWrapper autoOverflowY" style="">
+                    <ol class="dropdown-list" id="diningAvailabilityForm-searchTime-dropdown-list" aria-hidden="true" role="listbox">
+                      <li role="option" data-value="80000712" data-display="breakfast" data-extraoptionclass="" class="selectOption" id="diningAvailabilityForm-searchTime-0"
+                        aria-label="breakfast" aria-setsize="29" aria-posinset="1" aria-selected="true" tabindex="-1" style="">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Time&nbsp;required - Opens menu - </span>Breakfast</span>
+                      </li>
+                      <li role="option" data-value="80000717" data-display="lunch" data-extraoptionclass="" class="selectOption" id="diningAvailabilityForm-searchTime-1"
+                        aria-label="lunch" aria-setsize="29" aria-posinset="2" aria-selected="false" tabindex="-1">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Time&nbsp;required - Opens menu - </span>Lunch</span>
+                      </li>
+                      <li role="option" data-value="80000714" data-display="dinner" data-extraoptionclass="" class="selectOption" id="diningAvailabilityForm-searchTime-2"
+                        aria-label="dinner" aria-setsize="29" aria-posinset="3" aria-selected="false" tabindex="-1">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Time&nbsp;required - Opens menu - </span>Dinner</span>
+                      </li>
+                      <li role="option" data-value="08:00" data-display="8:00am" data-extraoptionclass="" class="selectOption" id="diningAvailabilityForm-searchTime-3"
+                        aria-label="8:00am" aria-setsize="29" aria-posinset="4" aria-selected="false" tabindex="-1">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Time&nbsp;required - Opens menu - </span>8:00 AM</span>
+                      </li>
+                      <li role="option" data-value="08:30" data-display="8:30am" data-extraoptionclass="" class="selectOption" id="diningAvailabilityForm-searchTime-4"
+                        aria-label="8:30am" aria-setsize="29" aria-posinset="5" aria-selected="false" tabindex="-1">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Time&nbsp;required - Opens menu - </span>8:30 AM</span>
+                      </li>
+                      <li role="option" data-value="09:00" data-display="9:00am" data-extraoptionclass="" class="selectOption" id="diningAvailabilityForm-searchTime-5"
+                        aria-label="9:00am" aria-setsize="29" aria-posinset="6" aria-selected="false" tabindex="-1">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Time&nbsp;required - Opens menu - </span>9:00 AM</span>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <span class="shadow-mask"></span>
+              </span>
+            </div>
+            <div class="formInputElement    short  floatLabelLeft" data-plugins="[&quot;pepClientSideValidatorToggle&quot;]" id="partySizeid-base">
+              <label for="partySize" class="required" id="partySize-label">
+                <span class="labelValue">Party Size</span>
+                <span class="accessibleAltText">&nbsp;required - Opens menu</span>
+              </label>
+
+              <span class="selectBox short standardFormElement status-closed" id="partySize-wrapper">
+                <span class="selectBox-nojs selectBoxAccessible" style="display: none;">
+                  <select name="partySize" id="partySize" tabindex="-1" class="partySize inputElement" min="1" max="49" abovemax="50+">
+                    <option value="1" label="1">1</option>
+                    <option value="2" label="2" selected="selected">2</option>
+                    <option value="3" label="3">3</option>
+                    <option value="4" label="4">4</option>
+                    <option value="5" label="5">5</option>
+                  </select>
+                </span>
+                <span class="richSelectArrowIcon uiGlobalSprite" style="z-index: 5;"></span>
+                <div class="select-toggle hoverable" aria-pressed="false" aria-expanded="false" aria-owns="partySize-dropdown-list" role="button"
+                  tabindex="0" style="z-index: auto;">
+                  <span class="select-value" data-activeoptionclass="">
+                    <span class="rawOption">
+                      <span class="accessibleText hidden">Party Size&nbsp;required - Opens menu - </span>2
+                      <span class="selectedValue accessibleText">
+                        currently selected.</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="listWrapper">
+                  <div class="innerListWrapper">
+                    <ol class="dropdown-list" id="partySize-dropdown-list" aria-hidden="true" role="listbox">
+                      <li role="option" data-value="1" data-display="1" data-extraoptionclass="" class="selectOption" id="partySize-0" aria-label="1"
+                        aria-setsize="49" aria-posinset="1" aria-selected="false">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Party Size&nbsp;required - Opens menu - </span>1</span>
+                      </li>
+                      <li role="option" data-value="2" data-display="2" data-extraoptionclass="" class="selectOption" id="partySize-1" aria-label="2"
+                        aria-setsize="49" aria-posinset="2" aria-selected="true">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Party Size&nbsp;required - Opens menu - </span>2</span>
+                      </li>
+                      <li role="option" data-value="3" data-display="3" data-extraoptionclass="" class="selectOption" id="partySize-2" aria-label="3"
+                        aria-setsize="49" aria-posinset="3" aria-selected="false">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Party Size&nbsp;required - Opens menu - </span>3</span>
+                      </li>
+                      <li role="option" data-value="4" data-display="4" data-extraoptionclass="" class="selectOption" id="partySize-3" aria-label="4"
+                        aria-setsize="49" aria-posinset="4" aria-selected="false">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Party Size&nbsp;required - Opens menu - </span>4</span>
+                      </li>
+                      <li role="option" data-value="5" data-display="5" data-extraoptionclass="" class="selectOption" id="partySize-4" aria-label="5"
+                        aria-setsize="49" aria-posinset="5" aria-selected="false">
+                        <span class="rawOption">
+                          <span class="accessibleText hidden">Party Size&nbsp;required - Opens menu - </span>5</span>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <span class="shadow-mask"></span>
+              </span>
+            </div>
+            <input type="hidden" name="id" value="16660079;entityType=restaurant">
+          </form>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="diningCtaModButtons">
+
+        <button name="findTableButton" id="dineAvailSearchButton" type="submit" class="pillSubmit" data-plugins="[&quot;pepActiveStyleSupport&quot;]"
+          style="">
+          <span class="pillBase callToAction">
+            <span class="gradient">
+              <span class="buttonText">Search Times</span>
+            </span>
+          </span>
+        </button>
+      </div>
+      <div id="itineraryAwarenessModalCTAContainer"></div>
+      <div id="timesContainer">
+        <div class="horizontalSeparator diningCtaHSeparator">
+        </div>
+        <span class="title">Available Times</span>
+
+        <span class="diningReservationInfoText available">
+          Search results around 8:00 AM to 10:30 AM on Friday, April 5, 2019. </span>
+
+        <div class="ctaAvailableTimesContainer">
+          <div class="availableTime">
+            <a class="pillLink" >
+              <span class="button offerButton blue firstCtaOption pillBase callToAction " tabindex="0" data-servicedatetime="2019-04-05T08:45:00-04:00"
+                data-offerids="offerId[]=https://disneyworld.disney.go.com/api/wdpro/global-pool-override-B/availability-service/table-service-availability/DEADBEEF"
+                data-bookinglink="https://disneyworld.disney.go.com/dining-reservation/setup-order/table-service/?offerId[]=https://disneyworld.disney.go.com/api/wdpro/global-pool-override-B/availability-service/table-service-availability/DEADBEEF&amp;offerOrigin=/dining/magic-kingdom/be-our-guest-restaurant/"
+                data-bookingtype="table-service">
+                <span class="gradient">
+                  <span class="buttonText">8:45 AM</span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <span id="diningAvailabilityFlag" data-hasavailability="1"></span>
+      </div>
+    </div>
+  </span>
+
+  <div class="finderDetailsHours">
+    <h3 class="operationalHoursTitle">Be Our Guest Restaurant</h3>
+    <div id="finderDetailsHoursDatePickerContainer" class="finderDetailsHoursDatePickerContainer">
+      <span class="datePickerButton">
+        <span id="DetailHoursDatePicker" class="pepFinderDetailsScheduleHoursContainer hoverable">
+          <time class="calendarDate" datetime="2019-04-04" id="time_DetailHoursDatePicker">
+            <span id="time_DetailHoursDatePicker_day">Thursday</span>
+            <span id="time_DetailHoursDatePicker_date">April 4, 2019</span>
+          </time>
+          <input type="hidden" name="pep_datepicker_DetailHoursDatePicker_hidden" value="2019-04-04" class="pepFinderDetailsScheduleHoursDatePicker hasDatepicker" id="pep_datepicker_DetailHoursDatePicker_hidden">
+          <button type="button" class="ui-datepicker-trigger icon-interactive-s calendarMonth-default" aria-describedby="date" tabindex="0">
+            <span id="calendarText" class="accessibleText">Selected date, Wednesday, April 3, 2019. Calendar Control. Expand by pressing enter key or collapse by pressing
+              escape. Use arrows key to select day and page up or down keys to change between months.</span>
+          </button>
+        </span>
+      </span>
+    </div>
+    <div id="MoreDetailsHoursOverlayListContainer">
+      <table class="detailHoursTable">
+        <tbody>
+          <tr class="hoursRow">
+            <td>
+              <div class="detailHoursTitle">
+                Breakfast
+              </div>
+            </td>
+            <td class="detailHoursRange">
+              <span class="detailHoursStartTime">8:00 AM</span>
+              <span class="detailHoursEndTime"> - 10:30 AM </span>
+            </td>
+          </tr>
+
+          <tr class="hoursRow">
+            <td>
+              <div class="detailHoursTitle">
+                Lunch
+              </div>
+            </td>
+            <td class="detailHoursRange">
+              <span class="detailHoursStartTime">11:00 AM</span>
+              <span class="detailHoursEndTime"> - 2:30 PM </span>
+            </td>
+          </tr>
+
+          <tr class="hoursRow">
+            <td>
+              <div class="detailHoursTitle">
+                Dinner
+              </div>
+            </td>
+            <td class="detailHoursRange">
+              <span class="detailHoursStartTime">4:00 PM</span>
+              <span class="detailHoursEndTime"> - 9:30 PM </span>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
