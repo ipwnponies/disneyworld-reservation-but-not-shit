@@ -2,11 +2,12 @@ import enum
 import itertools
 import smtplib
 from email.mime.text import MIMEText
-from typing import List, Dict
+from typing import Dict
+from typing import List
 
 import arrow
 import bs4
-from apscheduler.schedulers.blocking import BlockingScheduler
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
@@ -14,7 +15,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support import expected_conditions as expected
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.common.exceptions import TimeoutException
 from tabulate import tabulate
 
 
@@ -36,7 +36,6 @@ def parse_for_time(html_page) -> List[str]:
 
 
 def query_available_times(driver, wait, actions, date, meal) -> Dict:
-    driver.get('https://disneyworld.disney.go.com/dining/magic-kingdom/be-our-guest-restaurant/')
     # Set date
     date_select_element = wait.until(
         expected.presence_of_element_located((By.ID, 'diningAvailabilityForm-searchDate')),
@@ -114,7 +113,10 @@ def scheduled_main(driver, wait, actions):
             print('Timed out, givin up...')
         driver.refresh()
 
-    if False:
+    # TODO: Make this a config value
+    config_email = False
+
+    if config_email and results:
         print('Emailing results')
         email_results(tabulate(results, headers='keys'))
     else:
@@ -132,19 +134,6 @@ def main():
         driver.get('https://disneyworld.disney.go.com/dining/magic-kingdom/be-our-guest-restaurant/')
 
         scheduled_main(driver, wait, actions)
-
-        # scheduler = BlockingScheduler()
-        # scheduler.add_job(
-        #     scheduled_main,
-        #     trigger='cron',
-        #     args=[
-        #         driver,
-        #         wait,
-        #         actions,
-        #     ],
-        #     minute='*/5',
-        # )
-        # scheduler.start()
 
 
 if __name__ == '__main__':
