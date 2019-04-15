@@ -1,9 +1,13 @@
 import enum
 import itertools
+import json
 import smtplib
+from collections import namedtuple
 from email.mime.text import MIMEText
+from textwrap import dedent
 from typing import Dict
 from typing import List
+from typing import Tuple
 
 import arrow
 import bs4
@@ -16,6 +20,8 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support import expected_conditions as expected
 from selenium.webdriver.support.wait import WebDriverWait
 from tabulate import tabulate
+
+Data = namedtuple('Data', 'date meal time')
 
 
 @enum.unique
@@ -67,11 +73,30 @@ def query_available_times(driver, wait, actions, date, meal) -> Dict:
 
     times = parse_for_time(driver.page_source)
 
-    return {
-        'date': date.format('YYYY-MM-DD'),
-        'meal': meal.name,
-        'times': times,
-    }
+    return times
+
+
+def print_output(lost_reservations, new_reservations):
+    email_template = dedent('''Lost reservations
+    {}
+
+    New reservations
+    {}
+    ''')
+
+    msg = email_template.format(
+        tabulate([Data(*i) for i in lost_reservations], headers='keys'),
+        tabulate([Data(*i) for i in new_reservations], headers='keys'),
+    )
+
+    # TODO: Make this a config value
+    config_email = False
+
+    if config_email and (lost_reservations or new_reservations):
+        print('Emailing results')
+        email_results(msg)
+    else:
+        print(msg)
 
 
 def email_results(message):
@@ -94,33 +119,37 @@ def email_results(message):
         server.send_message(email_message)
 
 
-def scheduled_main(driver, wait, actions):
-    date = arrow.get('2019-05-24')
-    dates = [
-        arrow.get('2019-05-24'),
-        arrow.get('2019-05-25'),
-        arrow.get('2019-05-26'),
-    ]
+def get_changes_from_last_run(results) -> Tuple[List[Data], List[Data]]:
+    try:
+        with open('availability.json', 'r') as file:
+            old_results = [Data(*i) for i in json.load(file)]
+    except FileNotFoundError:
+        old_results = []
 
+    with open('availability.json', 'w') as file:
+        # Save new results
+        json.dump(results, file)
+    # Get difference
+    lost_reservations = set(old_results) - set(results)
+    new_reservations = set(results) - set(old_results)
+
+    return lost_reservations, new_reservations
+
+
+def scheduled_main(driver, wait, actions, dates, meals=Meal):
     results = []
-    for date, meal in itertools.product(dates, Meal):
+    for date, meal in itertools.product(dates, meals):
         print(f'Starting for {date} {meal.name}')
         try:
             times = query_available_times(driver, wait, actions, date, meal)
-            if times['times']:
-                results.append(times)
+            for i in times:
+                results.append(Data(date.format('YYYY-MM-DD'), meal.name, i))
         except TimeoutException:
             print('Timed out, givin up...')
         driver.refresh()
 
-    # TODO: Make this a config value
-    config_email = False
-
-    if config_email and results:
-        print('Emailing results')
-        email_results(tabulate(results, headers='keys'))
-    else:
-        print(tabulate(results, headers='keys'))
+    lost_reservations, new_reservations = get_changes_from_last_run(results)
+    print_output(lost_reservations, new_reservations)
 
 
 def main():
@@ -133,7 +162,13 @@ def main():
         driver.set_window_size(1200, 600)
         driver.get('https://disneyworld.disney.go.com/dining/magic-kingdom/be-our-guest-restaurant/')
 
-        scheduled_main(driver, wait, actions)
+        dates = [
+            arrow.get('2019-05-24'),
+            arrow.get('2019-05-25'),
+            arrow.get('2019-05-26'),
+        ]
+
+        scheduled_main(driver, wait, actions, dates)
 
 
 if __name__ == '__main__':

@@ -8,7 +8,7 @@ def availability_response():
         return file.read()
 
 
-def test_foo():
+def test_parse_for_time():
     time = main.parse_for_time(availability_response())
     TestCase().assertCountEqual(
         time, [
