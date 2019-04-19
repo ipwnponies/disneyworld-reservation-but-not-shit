@@ -168,8 +168,4 @@ def main():
             arrow.get('2019-05-26'),
         ]
 
-        scheduled_main(driver, wait, actions, dates)
-
-
-if __name__ == '__main__':
-    main()
+        scheduled_main(driver, wait, actions, dates, [Meal.dinner])
