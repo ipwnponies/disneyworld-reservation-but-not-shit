@@ -1,0 +1,12 @@
+---
+email: true
+restaurants:
+- name: Example Restaurant
+  url: example.
+mail:
+  sender: 'example@example.com'
+  password: 'password'
+  smtp_server: 'example@example.com'
+  recipients:
+  - 'example@example.com'
+# vim: filetype=yaml

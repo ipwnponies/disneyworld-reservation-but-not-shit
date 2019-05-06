@@ -21,6 +21,8 @@ from selenium.webdriver.support import expected_conditions as expected
 from selenium.webdriver.support.wait import WebDriverWait
 from tabulate import tabulate
 
+from disney_reservation.config import config
+
 Data = namedtuple('Data', 'date meal time')
 
 
@@ -89,10 +91,7 @@ def print_output(lost_reservations, new_reservations):
         tabulate([Data(*i) for i in new_reservations], headers='keys'),
     )
 
-    # TODO: Make this a config value
-    config_email = False
-
-    if config_email and (lost_reservations or new_reservations):
+    if config.mail.enable and (lost_reservations or new_reservations):
         print('Emailing results')
         email_results(msg)
     else:
@@ -102,20 +101,13 @@ def print_output(lost_reservations, new_reservations):
 def email_results(message):
 
     email_message = MIMEText(message)
-    mail_config = {
-        'subject': 'Reservations availability at Be Our Guest',
-        'sender': 'example@example.com',
-        'recipients': [
-            'example@example.com',
-        ],
-    }
-    email_message['Subject'] = mail_config['subject']
-    email_message['From'] = mail_config['sender']
-    email_message['To'] = ','.join(mail_config['recipients'])
+    email_message['Subject'] = 'Reservations availability at Somewhere'
+    email_message['From'] = config.mail.sender
+    email_message['To'] = ','.join(config.mail.recipients)
 
-    with smtplib.SMTP('example.com:587') as server:
+    with smtplib.SMTP(config.mail.smtp_server) as server:
         server.starttls()
-        server.login(mail_config['sender'], 'i-am-a-passowrd')
+        server.login(config.mail.sender, config.mail.password)
         server.send_message(email_message)
 
 

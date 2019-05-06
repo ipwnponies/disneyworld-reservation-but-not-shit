@@ -1,5 +1,8 @@
 apscheduler
 arrow
+attrs
 beautifulsoup4
 selenium
+strictyaml
 tabulate
+xdg
