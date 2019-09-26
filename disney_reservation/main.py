@@ -152,7 +152,8 @@ def main():
         actions = ActionChains(driver)
 
         driver.set_window_size(1200, 600)
-        driver.get('https://disneyworld.disney.go.com/dining/magic-kingdom/be-our-guest-restaurant/')
+        # TODO: Read url from config
+        driver.get('REPLACE_ME')
 
         dates = [
             arrow.get('2019-05-24'),
